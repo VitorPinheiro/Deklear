@@ -1,0 +1,150 @@
+/**
+ * 
+ */
+package br.pucrio.inf.lac.CompMovel.logic;
+
+import java.util.ArrayList;
+import java.util.UUID;
+
+import br.pucrio.inf.lac.CompMovel.IDatabaseManager;
+import br.pucrio.inf.lac.CompMovel.model.DoubleValueEvent;
+import br.pucrio.inf.lac.CompMovel.model.Event;
+import br.pucrio.inf.lac.CompMovel.model.Monitoring;
+import br.pucrio.inf.lac.CompMovel.model.ObsActVocabulary.LogicalConditions;
+import br.pucrio.inf.lac.CompMovel.model.SingleValueEvent;
+
+/**
+ * @author Vitor
+ * 
+ * Esta classe ira, de acordo com o que esta escrito na ontologia, configurar as regras CEP no MHub do paciente de acordo com os eventos que
+ * se quer monitorar.
+ * Ela que vai ler os eventos da ontologia, por exemplo, pressao alta, febre e etc e setar para ser monitorado pelo MHub através do MEPA. Aqui
+ * vai conter as notificações para serem enviadas para os Heros.
+ * 
+ * Aqui pode ter também a função que devolve quais são os Heros de um paciente. Os Heros de um paciente são os MHubs que irão receber
+ * notificações do paciente sobre o que esta sendo monitorado nele.
+ *
+ */
+public class PatientEventManager 
+{	
+	private boolean _configureMhubPatient = true;
+	private static PatientEventManager _patientConfigurator;
+	private static IDatabaseManager _databaseManager = ObsActDbManager.getInstance();
+	
+	// BPM
+
+	
+	private static void Initialize()
+	{
+		_patientConfigurator = null;
+		// _highHeartRate = 
+	}
+	
+	public static PatientEventManager getInstance()
+	{
+		if(_patientConfigurator == null)
+		{
+			Initialize();
+			_patientConfigurator = new PatientEventManager();
+		}
+		
+		return _patientConfigurator;
+	}
+	
+	private PatientEventManager() {};
+	
+	/**
+	 * Se retornar null é pq ja configurou uma vez.
+	 * @param patientMhubID
+	 * @return
+	 */
+	public ArrayList<String> configurePatientsMHubMepaRules(UUID patientMhubID)
+	{
+		  if(_configureMhubPatient)
+			  _configureMhubPatient = false;
+		  else
+			  return null;
+		  
+		  System.out.println("CONFIGURANDO MEPA QUERIES!");
+		  ArrayList<String> mepaQueries = new ArrayList<String>();
+		  
+		  // VITOR TESTAR AQUI, vc criou essa buildMEPAQueries com sono e nao testou. ela só monta a mepaquery dinamicamente.
+		  // essa q ta ai mQuery2 e que ja funciona.
+		  mepaQueries = buildMEPAQueries(patientMhubID);
+		  
+		  //"1ba11ce4-7325-4899-b0d9-59a30d353350"); 
+		  String mQuery = "{\"MEPAQuery\":{\"type\":\"add\",\"label\":\"FromValue\",\"rule\":\"SELECT fromValue (sensorValue[0]) as value FROM SensorData (sensorName='zephyrbpm').win:time_batch(10 sec) where fromValue > 50\",\"target\":\"global\"}}";
+		  String mepaQuery = "{\"MEPAQuery\": {\"type\":\"add\",\"label\":\"ZephyrBPM\",\"object\":\"rule\",\"rule\":\"SELECT * FROM SensorData WHERE sensorName='zephyrbpm'\"\"target\":\"global\"}}";
+		  
+		  // Essa regra CEP funcionou!!!  Vou usar para configurar os valores a serem enviados pelo CEP
+		  // Vi que após vc configura a regra CEP no mepa, toda vez que ela ativa ela vem assim para o server:
+		  // {"uuid":"6ddfb332-760b-4952-9654-c086815abd76","label":"ZephyrBPMVitor2","data":"{\"value\":137}","latitude":-23.0129005,"longitude":-43.4345253,"tag":"EventData","timestamp":1511328872}
+		  // Nao tem sensor_name nessa, pq ela vem do CEP. Entao eu tenho que pegar pelo Label da regra. Aqui no server vou escutar pelo "label", o tag "EventData", vai ter timestamp e ainda tem uma lat,long.
+		  // Vou deixar os valores na ontologia do paciente, sempre que ligar o servidor ele atualiza a regra CEP com o valor certo.
+		  // Tem que ver como apagar de vez a regra e como alterar ela.
+		  //String mQuery2 = "{\"MEPAQuery\":{\"type\":\"stop\",\"label\":\"ZephyrBPM\",\"rule\":\"SELECT (sensorValue[0]) as value FROM SensorData (sensorName='zephyrbpm') WHERE sensorValue[0] < 50 or sensorValue[0] >= 100\",\"target\":\"global\"}}";
+
+		  //mepaQueries.add(mQuery2);
+		  
+		  return mepaQueries;
+	}
+	
+	private ArrayList<String> buildMEPAQueries(UUID patientMhubID)
+	{
+		ArrayList<String> mepaQueries = new ArrayList<String>();
+		Monitoring monitoring = _databaseManager.getAllMonitoringInformation(patientMhubID.toString());
+		
+		if(monitoring == null)
+		{
+			System.out.println("MHub encontrado nao é um paciente cadastrado na ontologia. Logo não será enviado MEPA queries.");
+			return null;
+		}
+		
+		ArrayList<Event> events = monitoring.getEvents(); 
+		
+		if(events == null)
+		{
+			return null;
+		}
+
+		String mQuery = null;
+		for(int i=0; i<events.size();i++)
+        {
+			String labelQuery = events.get(i).getObsRuleID();
+			labelQuery = labelQuery.trim();
+			labelQuery = labelQuery.replace(" ", "");
+			
+			String sensorName = events.get(i).getSensorName();
+        	
+        	if(events.get(i) instanceof SingleValueEvent)
+        	{
+        		SingleValueEvent sEvent = (SingleValueEvent) events.get(i);
+        		String value = Double.toString(sEvent.getValue());
+        		String logicCondition = sEvent.getLogicalCondition().getMathSignal();   
+        		
+        		mQuery = "{\"MEPAQuery\":{\"type\":\"add\",\"label\":\""+labelQuery+"\",\"rule\":\"SELECT (sensorValue[0]) as value FROM SensorData (sensorName='"+sensorName+"') WHERE sensorValue[0] "+logicCondition+" "+value+"\",\"target\":\"global\"}}";
+        		mepaQueries.add(mQuery);
+        	}
+        	else if(events.get(i) instanceof DoubleValueEvent)
+        	{
+        		DoubleValueEvent dEvent = (DoubleValueEvent) events.get(i);
+        		String[] value = new String[2];
+        		value[0] = Double.toString(dEvent.getValues()[0]);
+        		value[1] = Double.toString(dEvent.getValues()[1]); 
+        		String logicCondition = dEvent.getLogicalCondition().getMathSignal();
+        		
+        		// build MEPA query
+        		// Aqui vou recever sensorValue[0] e sensorValue[1]
+        		// A dupla de valores low é usada pra pressao arterial.
+        		mQuery = "{\"MEPAQuery\":{\"type\":\"add\",\"label\":\""+labelQuery+"\",\"rule\":\"SELECT * FROM SensorData (sensorName='"+sensorName+"') WHERE sensorValue[0] "+logicCondition+" "+value[0]+" and sensorValue[1] "+logicCondition+" "+value[1]+"\",\"target\":\"global\"}}";
+        		mepaQueries.add(mQuery);
+        	}
+        }
+		
+		return mepaQueries;
+	}
+	  
+	
+	
+	
+}

@@ -1,0 +1,85 @@
+2018-11-28 15:35:10,711 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-28 15:35:34,160 [Worker-12] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: br.pucrio.inf.lac:CompMovel:0.0.1-SNAPSHOT @ /Users/vitor/git-repository/CompMovel/icareserver/icareserver/MHubJava/pom.xml.
+2018-11-28 15:35:35,056 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-28 15:35:35,056 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/MHubJava/src/main/resources
+2018-11-28 15:35:35,267 [Worker-8] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: br.pucrio.inf.lac:CompMovel:0.0.1-SNAPSHOT @ /Users/vitor/git-repository/CompMovel/icareserver/icareserver/MHubJava/pom.xml.
+2018-11-28 15:35:35,268 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-28 15:35:35,268 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/MHubJava/src/test/resources
+2018-11-28 15:35:36,551 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-28 15:35:36,551 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/MHubJava/src/main/resources
+2018-11-28 15:35:36,552 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-28 15:35:36,553 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/MHubJava/src/test/resources
+2018-11-28 15:36:21,781 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-28 15:36:21,781 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/MHubJava/src/main/resources
+2018-11-28 15:36:21,783 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-28 15:36:21,783 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/MHubJava/src/test/resources
+2018-11-28 15:36:30,483 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-28 15:36:30,483 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/MHubJava/src/main/resources
+2018-11-28 15:36:30,484 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-28 15:36:30,484 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/MHubJava/src/test/resources
+2018-12-03 17:46:00,963 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2018-12-03 17:46:33,571 [Worker-11] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: br.pucrio.inf.lac:CompMovel:0.0.1-SNAPSHOT @ /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/pom.xml.
+2018-12-03 17:46:34,130 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:46:34,130 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:46:34,133 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:46:34,133 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:46:35,396 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:46:35,396 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:46:35,397 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:46:35,398 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:47:42,077 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:47:42,077 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:47:42,080 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:47:42,080 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:49:10,902 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:49:10,903 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:49:10,904 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:49:10,904 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:49:11,923 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:49:11,923 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:49:11,924 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:49:11,924 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:51:00,757 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:51:00,757 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:51:00,759 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:51:00,759 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:51:44,329 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:51:44,329 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:51:44,330 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:51:44,330 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:51:49,799 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:51:49,799 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:51:49,801 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:51:49,801 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:52:15,212 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:52:15,212 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:52:15,212 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:52:15,213 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:52:22,743 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:52:22,743 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:52:22,744 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:52:22,744 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:58:09,261 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:58:09,261 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:58:09,262 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:58:09,263 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:58:21,033 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:58:21,033 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:58:21,034 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:58:21,035 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:58:28,408 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:58:28,409 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:58:28,410 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:58:28,410 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:58:50,942 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:58:50,942 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:58:50,943 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:58:50,943 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:59:05,187 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:59:05,187 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:59:05,188 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:59:05,188 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources
+2018-12-03 17:59:11,585 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:59:11,585 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/main/resources
+2018-12-03 17:59:11,588 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-12-03 17:59:11,588 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/vitor/git-repository/CompMovel/icareserver/icareserver/Deklaer/src/test/resources

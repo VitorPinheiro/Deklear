@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://idosocare/monitoring.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://idosocare/monitoring.owl">
+    <Prefix name="" IRI="http://idosocare/monitoring.owl"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://idosocare/patient.owl</Import>
+    <Declaration>
+        <ObjectProperty IRI="#hasEvent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasHighValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasSensorName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DoubleValueEvent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Monitoring1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Monitoring"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasEventName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasNotificationForLow"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasNotificationForHigh"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SingleValueEvent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HeartRateEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasLowValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPatientToMonitor"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#DoubleValueEvent"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SingleValueEvent"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#SingleValueEvent"/>
+        <NamedIndividual IRI="#HeartRateEvent"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Monitoring"/>
+        <NamedIndividual IRI="#Monitoring1"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEvent"/>
+        <NamedIndividual IRI="#Monitoring1"/>
+        <NamedIndividual IRI="#HeartRateEvent"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPatientToMonitor"/>
+        <NamedIndividual IRI="#Monitoring1"/>
+        <NamedIndividual IRI="http://idosocare/patient.owl#dalva"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasEventName"/>
+        <NamedIndividual IRI="#HeartRateEvent"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Batimento cardiaco</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasHighValue"/>
+        <NamedIndividual IRI="#HeartRateEvent"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">100</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasLowValue"/>
+        <NamedIndividual IRI="#HeartRateEvent"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">40</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasSensorName"/>
+        <NamedIndividual IRI="#HeartRateEvent"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">zephyrbpm</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEvent"/>
+        <Class IRI="#Monitoring"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPatientToMonitor"/>
+        <Class IRI="#Monitoring"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEvent"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPatientToMonitor"/>
+        <Class IRI="http://idosocare/patient.owl#Patient"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasEventName"/>
+        <Class IRI="#Event"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasHighValue"/>
+        <Class IRI="#Event"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasLowValue"/>
+        <Class IRI="#Event"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasNotificationForHigh"/>
+        <Class IRI="#Event"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasNotificationForLow"/>
+        <Class IRI="#Event"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasSensorName"/>
+        <Class IRI="#Event"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasEventName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasHighValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasLowValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasNotificationForHigh"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasNotificationForLow"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://idosocare/monitoring.owl#hasSensorName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

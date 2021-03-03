@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://idosocare/patient.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://idosocare/patient.owl">
+    <Prefix name="" IRI="http://idosocare/patient.owl"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#EmergencyContact"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://xmlns.com/foaf/spec/#term_name"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#vitor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPhoneNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEmergencyContact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMhubID"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dalva"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#EmergencyContact"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patient"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Patient"/>
+        <NamedIndividual IRI="#dalva"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EmergencyContact"/>
+        <NamedIndividual IRI="#vitor"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEmergencyContact"/>
+        <NamedIndividual IRI="#dalva"/>
+        <NamedIndividual IRI="#vitor"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMhubID"/>
+        <NamedIndividual IRI="#dalva"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">6ddfb332-760b-4952-9654-c086815abd76</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPhoneNumber"/>
+        <NamedIndividual IRI="#dalva"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">982739999</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://xmlns.com/foaf/spec/#term_name"/>
+        <NamedIndividual IRI="#dalva"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Dalva</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMhubID"/>
+        <NamedIndividual IRI="#vitor"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">bb103877-8335-444a-be5f-db8d916f6754</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPhoneNumber"/>
+        <NamedIndividual IRI="#vitor"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">982735218</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://xmlns.com/foaf/spec/#term_name"/>
+        <NamedIndividual IRI="#vitor"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Vitor</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEmergencyContact"/>
+        <Class IRI="#Patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEmergencyContact"/>
+        <Class IRI="#EmergencyContact"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasMhubID"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMhubID"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPhoneNumber"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMhubID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPhoneNumber"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://xmlns.com/foaf/spec/#term_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://xmlns.com/foaf/spec/#term_name</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">name</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

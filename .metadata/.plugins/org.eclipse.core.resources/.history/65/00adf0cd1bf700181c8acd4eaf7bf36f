@@ -1,0 +1,346 @@
+package br.pucrio.inf.lac.CompMovel;
+
+import java.util.ArrayList;
+import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import br.pucrio.inf.lac.CompMovel.logic.ContextDbManager;
+import br.pucrio.inf.lac.CompMovel.logic.ObsActDbManager;
+import br.pucrio.inf.lac.CompMovel.logic.PatientEventManager;
+import br.pucrio.inf.lac.CompMovel.model.ActRule;
+import br.pucrio.inf.lac.CompMovel.model.ActRuleEffect;
+import br.pucrio.inf.lac.CompMovel.model.ActRuleNotification;
+import br.pucrio.inf.lac.CompMovel.model.DoubleValueEvent;
+import br.pucrio.inf.lac.CompMovel.model.Event;
+import br.pucrio.inf.lac.CompMovel.model.Monitoring;
+import br.pucrio.inf.lac.CompMovel.model.Person;
+import br.pucrio.inf.lac.CompMovel.model.SingleValueEvent;
+import lac.cnclib.sddl.message.ApplicationMessage;
+import lac.cnclib.sddl.message.ClientLibProtocol.PayloadSerialization;
+import lac.cnclib.sddl.serialization.Serialization;
+import lac.cnet.sddl.objects.ApplicationObject;
+import lac.cnet.sddl.objects.Message;
+import lac.cnet.sddl.objects.PrivateMessage;
+import lac.cnet.sddl.udi.core.SddlLayer;
+import lac.cnet.sddl.udi.core.UniversalDDSLayerFactory;
+import lac.cnet.sddl.udi.core.UniversalDDSLayerFactory.SupportedDDSVendors;
+import lac.cnet.sddl.udi.core.listener.UDIDataReaderListener;
+
+/**
+ * 
+ * @author vitor
+ *
+ * Class that contains the Main function.
+ * 
+ */
+public class ICareServer implements UDIDataReaderListener<ApplicationObject> {
+  private static SddlLayer  _core;
+  
+  private Utils _utils;
+  private IDatabaseManager _databaseManager; 
+  private PatientEventManager _patientEventManager; 
+  private ContextDbManager _db;
+  private static long _startTime = 0;
+  private static long _estimatedTime;
+
+  public static void main(String[] args) {
+    Logger.getLogger("").setLevel(Level.OFF);
+
+    
+    new ICareServer();
+  }
+  
+
+  public ICareServer() {
+	  _core = UniversalDDSLayerFactory.getInstance(SupportedDDSVendors.OpenSplice);
+    _core.createParticipant(UniversalDDSLayerFactory.CNET_DOMAIN);
+
+    _core.createPublisher();
+    _core.createSubscriber();
+
+    Object receiveMessageTopic = _core.createTopic(Message.class, Message.class.getSimpleName());
+    _core.createDataReader(this, receiveMessageTopic);
+
+    Object toMobileNodeTopic = _core.createTopic(PrivateMessage.class, PrivateMessage.class.getSimpleName());
+    _core.createDataWriter(toMobileNodeTopic);
+    
+    _patientEventManager = PatientEventManager.getInstance();
+    _databaseManager = ObsActDbManager.getInstance();
+    _utils = Utils.getInstance();
+    _db = ContextDbManager.getInstance();
+    
+    System.out.println("=== Server Started (Listening) ===");
+    synchronized (this) {
+      try {
+        this.wait();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+  
+
+  @Override
+  /**
+   * main function of ContextNet it is triggered whenever new data comes to SDDL.
+   */
+  public void onNewData(ApplicationObject topicSample) {
+	  	  
+	  if(_startTime == 0)
+		  _startTime = System.currentTimeMillis();
+	  
+    Message message = (Message) topicSample;
+    
+    String content = new String(message.getContent());
+    System.out.println("content = "+content);
+    
+    if(content != null)
+    	if(content.contains("already used."))
+    	{
+    		_estimatedTime = System.currentTimeMillis() - _startTime;
+    		System.out.println("Elapsed time to Initate, create CEP rules, send to MHub and receive confirmation of Rule created = "+_estimatedTime );
+    	}
+    
+    String mHubUuid = _utils.getAttributeFromMsg(content, "uuid");
+    if(mHubUuid == null)
+    {
+    	System.out.println("mHubUuid = null!!");
+    	return;
+    }
+    
+    System.out.println("UUID patient = "+mHubUuid);
+    UUID patientUUID = UUID.fromString(mHubUuid);
+    if(patientUUID != null)
+    {
+    	System.out.println("Patient MHubID = "+patientUUID.toString());
+    	
+    	configurePatientMHub(patientUUID);      	
+    }
+    
+    String sensor_name = _utils.getAttributeFromMsg(content, "sensor_name");
+    System.out.println("sensor_name = "+sensor_name);
+    if(sensor_name == null)
+    {
+    	System.out.println("Dado nao veio de um sensor. sensor_name eh null.");    	
+    }
+    
+    String label = _utils.getAttributeFromMsg(content, "label");
+    String tag = _utils.getAttributeFromMsg(content, "tag");  
+    
+    if(tag != null)
+    	if(tag.equalsIgnoreCase("EventData"))
+    		handleCepMsg(label, patientUUID, message);    
+    
+  }
+  
+  /**
+   * Funcao para tratar as mensagens CEP que vao ser geradas pela ontologia ObsAct
+   * @param sensor_name
+   * @param patientUUID
+   * @param message
+   */
+  private void handleCepMsg(String label, UUID patientUUID, Message message)
+  {
+	  if(label == null)
+	  {
+		  System.out.println("Dado nao veio de uma regra CEP. label eh null.");
+		  return;
+	  }
+	  
+	  System.out.println("Handling Cep Msg!");
+	  
+	  Monitoring monitoring = _databaseManager.getAllMonitoringInformation(patientUUID.toString());
+	  
+	  ArrayList<Event> events = monitoring.getEvents();
+	  
+	  Event eventResponsableForMsg = null;
+	  for(int i=0;i<events.size();i++)
+	  {
+		  if(events.get(i).getObsRuleID().equalsIgnoreCase(label))
+			  eventResponsableForMsg = events.get(i);
+	  }
+	  
+	  if(eventResponsableForMsg == null)
+	  {
+		  System.out.println("Mensagem chegou de uma regra CEP que o label dela nao é nenhum ObsActID (ou Event) que esta na ontologia.");
+		  return;
+	  }
+	  
+	  ActRule actRule = eventResponsableForMsg.getActRule();
+	  
+	  
+	  
+	  ArrayList<ActRuleEffect> actRuleEffects = actRule.getActRuleEffects();
+	  
+	  for(int i=0;i<actRuleEffects.size();i++)
+	  {
+		  if(actRuleEffects.get(i) instanceof ActRuleNotification)
+		  {
+			  ActRuleNotification actNot = (ActRuleNotification) actRuleEffects.get(i);
+			  executeNotificationEffect(actNot, message, eventResponsableForMsg);
+			  
+			  persistData(patientUUID.toString(), eventResponsableForMsg, message, actNot);
+		  }
+		  else
+		  {
+			  System.out.println("ERRP (ICareServer): ActRuleEffect nao é nenhum dos effects implementados.");
+		  }
+	  }
+  }
+  
+  private void persistData(String patientMHubID, Event eventResponsableForMsg, Message message, ActRuleNotification actNot)
+  {		     
+		String content = new String(message.getContent());
+		String data = _utils.getAttributeFromMsg(content, "data");
+		
+		String lat = _utils.getAttributeFromMsg(content, "latitude");
+		String longi = _utils.getAttributeFromMsg(content, "longitude");
+		
+		Double latitude = null;
+		if(lat != null)
+			latitude = Double.parseDouble(lat.trim());
+		
+		Double longitude = null;
+		if(longi != null)
+			longitude = Double.parseDouble(longi.trim());;
+		
+		Double value = null;
+		String notification = actNot.getNotification();
+		String sensor_name = eventResponsableForMsg.getSensorName();
+		String dataType = eventResponsableForMsg.getTypeOfData();
+		String unity = eventResponsableForMsg.getUnityOfMeasurement();		
+		
+		if(eventResponsableForMsg instanceof SingleValueEvent)
+		{
+			value = Double.parseDouble(data.replaceAll("\\D", ""));
+			_db.insertPatientDataSingleValue(patientMHubID, latitude, longitude, value, notification, sensor_name, dataType, unity);
+		}
+		else if(eventResponsableForMsg instanceof DoubleValueEvent)
+		{
+			System.out.println("---- PERSISTE DOUBLE!");
+		}
+		
+		
+		
+
+		
+		
+  }
+  
+  private void executeNotificationEffect(ActRuleNotification actRuleEffect, Message message, Event event)
+  {
+		String notificationStr = actRuleEffect.getNotification();   
+		System.out.println(notificationStr);
+		
+		Person person = new Person();
+		ArrayList<Person> heros = new ArrayList<Person>();
+		
+		for(int i=0;i<actRuleEffect.getMHubIdDestinations().size();i++)
+		{
+			person = new Person();
+			person.set_mHubID(actRuleEffect.getMHubIdDestinations().get(i));
+			
+			heros.add(person);
+		}
+		
+		String content = new String(message.getContent());
+		String data = _utils.getAttributeFromMsg(content, "data"); // {\value\:121}
+		
+		
+		if(event instanceof SingleValueEvent)
+		{
+			String value = data.replaceAll("\\D", "");
+			SingleValueEvent sEvent = (SingleValueEvent) event;
+			notificationStr = notificationStr+" "+sEvent.getValueInStringFormat(value);
+		}
+		else if(event instanceof DoubleValueEvent)
+		{
+			DoubleValueEvent dEvent = (DoubleValueEvent) event;
+			//notificationStr = notificationStr+" "+dEvent.getValueInStringFormat();
+			System.out.println("---- NOTIFICATION DOUBLE, VEJA COMO VEM A MSG!");
+		}
+			
+		
+		
+		
+		sendMessageToHeros(heros, message.getGatewayId(), notificationStr);
+  }
+  
+  private void configurePatientMHub(UUID patientUUID)
+  {
+	  	System.out.println("Start to sent MEPA rules to Patients's Mhub");
+	  	ArrayList<String> mepaQueries = _patientEventManager.configurePatientsMHubMepaRules(patientUUID);
+	  	if(mepaQueries != null)
+	  	{
+	  		for(int i=0; i<mepaQueries.size();i++)
+	  		{
+	  			sendMepaQuery(mepaQueries.get(i), patientUUID);
+	  		}
+	  		
+	  		if(mepaQueries.size() > 0)
+	  			System.out.println("All MEPA rules sent to Patients");
+	  	}
+	  	
+  }
+  
+  private void sendMessageToHeros(ArrayList<Person> heros, UUID gatewayId, String notificationToHero)
+  {
+	  	System.out.println("Envia para os HEROS");
+
+	  	for(int i=0; i<heros.size(); i++)
+	  	{
+	  		System.out.println("Enviando para o hero "+i);
+	  		
+	  		PrivateMessage privateMessage = new PrivateMessage();
+		    privateMessage.setGatewayId(gatewayId);
+		    //privateMessage.setNodeId(UUID.fromString("bb103877-8335-444a-be5f-db8d916f6754"));
+		    privateMessage.setNodeId(UUID.fromString(heros.get(i).get_mHubID())); // aqui coloca o id do HERO
+		    
+		    System.out.println("HERO UUID = "+heros.get(i).get_mHubID());
+		    
+		    ApplicationMessage appMsg = new ApplicationMessage();
+		    appMsg.setContentObject(notificationToHero);
+		    
+		    privateMessage.setMessage(Serialization.toProtocolMessage(appMsg));
+		    
+		    _core.writeTopic(PrivateMessage.class.getSimpleName(), privateMessage);
+	  	}
+	  	
+  }
+  
+  private void sendMepaQuery(String message, UUID nodeDest)
+  {
+	  	// Send the message
+	  	ApplicationMessage appMsg = new ApplicationMessage();
+	  	appMsg.setPayloadType( PayloadSerialization.JSON );
+	  	appMsg.setContentObject( "[" + message + "]" );
+	  	
+	    sendUnicastMSG(appMsg, nodeDest );
+  }
+  
+  /**
+   * Sends a message to a unique component (UNICAST)
+   * @param appMSG The application message (e.g. a String message)
+   * @param nodeID The UUID of the receiver
+   */
+  public void sendUnicastMSG(ApplicationMessage appMsg, UUID nodeID ) {
+		PrivateMessage privateMSG = new PrivateMessage();
+		privateMSG.setGatewayId( UniversalDDSLayerFactory.BROADCAST_ID );
+		privateMSG.setNodeId( nodeID );
+		privateMSG.setMessage( Serialization.toProtocolMessage( appMsg ) );
+		
+		sendCoreMSG( privateMSG );
+		
+		System.out.println("MEPA query sent: "+ appMsg.getContentObject().toString());
+  }
+  
+  /**
+   * Writes the message (send)
+   * @param privateMSG The message
+   */
+  private static void sendCoreMSG( PrivateMessage privateMSG ) {
+	  _core.writeTopic( PrivateMessage.class.getSimpleName(), privateMSG );
+  }
+  
+}

@@ -1,0 +1,919 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://obsact/vocabulary"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://obsact/vocabulary">
+    <Prefix name="" IRI="http://obsact/vocabulary"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <NamedIndividual IRI="#ActRuleBloodPr_High"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ActRuleBPM_Low"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dalva"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorObs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LessThan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ObsActRuleBPM_High"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_obsRule"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SensorObsTemp_High"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ZephyrTemperature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ObsActRuleBPM_Low"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ObsActRuleTemp_High"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EqualTo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_logicalCondition"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NotificationBloodPr_High"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_numberOfValues"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ActRuleTemp_High"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actuator"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_actuatorName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GreaterThan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NotificationBPM_High"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GreaterOrEqualThan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ObsRuleBloodPr_High"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActRule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LessOrEqualThan"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_valueTwoRestriction"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_name"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_actuationEffect"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isAbout"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ObsRuleTemp_High"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObsRule"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_mhubIdDestination"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_notificationText"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ObsRuleBPM_Low"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SensorObsBPM_High"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_actuator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_sensorObs"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_sensorName"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ObsActRuleBloodPr_High"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NotificationBPM_Low"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_actRule"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_unityOfMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NotificationTemp_High"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ObsRuleBPM_High"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObsActRule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_sensor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ZephyrBloodPressure"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ZephyrBpm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActuationEffect"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ActRuleBPM_High"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_obsActRule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LogicalCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Notification"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SensorObsBPM_Low"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_valueOneRestriction"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#EqualTo"/>
+        <Class IRI="#LogicalCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GreaterOrEqualThan"/>
+        <Class IRI="#LogicalCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GreaterThan"/>
+        <Class IRI="#LogicalCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LessOrEqualThan"/>
+        <Class IRI="#LogicalCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LessThan"/>
+        <Class IRI="#LogicalCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Notification"/>
+        <Class IRI="#ActuationEffect"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#ActRule"/>
+        <NamedIndividual IRI="#ActRuleBPM_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ActRule"/>
+        <NamedIndividual IRI="#ActRuleBPM_Low"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ActRule"/>
+        <NamedIndividual IRI="#ActRuleBloodPr_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ActRule"/>
+        <NamedIndividual IRI="#ActRuleTemp_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Entity"/>
+        <NamedIndividual IRI="#Dalva"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Notification"/>
+        <NamedIndividual IRI="#NotificationBPM_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Notification"/>
+        <NamedIndividual IRI="#NotificationBPM_Low"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Notification"/>
+        <NamedIndividual IRI="#NotificationBloodPr_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Notification"/>
+        <NamedIndividual IRI="#NotificationTemp_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ObsActRule"/>
+        <NamedIndividual IRI="#ObsActRuleBPM_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ObsActRule"/>
+        <NamedIndividual IRI="#ObsActRuleBPM_Low"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ObsActRule"/>
+        <NamedIndividual IRI="#ObsActRuleBloodPr_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ObsActRule"/>
+        <NamedIndividual IRI="#ObsActRuleTemp_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ObsRule"/>
+        <NamedIndividual IRI="#ObsRuleBPM_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ObsRule"/>
+        <NamedIndividual IRI="#ObsRuleBPM_Low"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ObsRule"/>
+        <NamedIndividual IRI="#ObsRuleBloodPr_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ObsRule"/>
+        <NamedIndividual IRI="#ObsRuleTemp_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SensorObs"/>
+        <NamedIndividual IRI="#SensorObsBPM_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SensorObs"/>
+        <NamedIndividual IRI="#SensorObsBPM_Low"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SensorObs"/>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SensorObs"/>
+        <NamedIndividual IRI="#SensorObsTemp_High"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sensor"/>
+        <NamedIndividual IRI="#ZephyrBloodPressure"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sensor"/>
+        <NamedIndividual IRI="#ZephyrBpm"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sensor"/>
+        <NamedIndividual IRI="#ZephyrTemperature"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actuationEffect"/>
+        <NamedIndividual IRI="#ActRuleBPM_High"/>
+        <NamedIndividual IRI="#NotificationBPM_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actuationEffect"/>
+        <NamedIndividual IRI="#ActRuleBPM_Low"/>
+        <NamedIndividual IRI="#NotificationBPM_Low"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actuationEffect"/>
+        <NamedIndividual IRI="#ActRuleBloodPr_High"/>
+        <NamedIndividual IRI="#NotificationBloodPr_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actuationEffect"/>
+        <NamedIndividual IRI="#ActRuleTemp_High"/>
+        <NamedIndividual IRI="#NotificationTemp_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsActRule"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <NamedIndividual IRI="#ObsActRuleBPM_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsActRule"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <NamedIndividual IRI="#ObsActRuleBPM_Low"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsActRule"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <NamedIndividual IRI="#ObsActRuleBloodPr_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <NamedIndividual IRI="#ObsRuleBPM_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <NamedIndividual IRI="#ObsRuleBPM_Low"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <NamedIndividual IRI="#ObsRuleBloodPr_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <NamedIndividual IRI="#ObsRuleTemp_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensor"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <NamedIndividual IRI="#ZephyrBloodPressure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensor"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <NamedIndividual IRI="#ZephyrBpm"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensor"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <NamedIndividual IRI="#ZephyrTemperature"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actRule"/>
+        <NamedIndividual IRI="#ObsActRuleBPM_High"/>
+        <NamedIndividual IRI="#ActRuleBPM_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <NamedIndividual IRI="#ObsActRuleBPM_High"/>
+        <NamedIndividual IRI="#ObsRuleBPM_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actRule"/>
+        <NamedIndividual IRI="#ObsActRuleBPM_Low"/>
+        <NamedIndividual IRI="#ActRuleBPM_Low"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <NamedIndividual IRI="#ObsActRuleBPM_Low"/>
+        <NamedIndividual IRI="#ObsRuleBPM_Low"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actRule"/>
+        <NamedIndividual IRI="#ObsActRuleBloodPr_High"/>
+        <NamedIndividual IRI="#ActRuleBloodPr_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <NamedIndividual IRI="#ObsActRuleBloodPr_High"/>
+        <NamedIndividual IRI="#ObsRuleBloodPr_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actRule"/>
+        <NamedIndividual IRI="#ObsActRuleTemp_High"/>
+        <NamedIndividual IRI="#ActRuleTemp_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <NamedIndividual IRI="#ObsActRuleTemp_High"/>
+        <NamedIndividual IRI="#ObsRuleTemp_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actRule"/>
+        <NamedIndividual IRI="#ObsRuleBPM_High"/>
+        <NamedIndividual IRI="#ActRuleBPM_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensorObs"/>
+        <NamedIndividual IRI="#ObsRuleBPM_High"/>
+        <NamedIndividual IRI="#SensorObsBPM_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actRule"/>
+        <NamedIndividual IRI="#ObsRuleBPM_Low"/>
+        <NamedIndividual IRI="#ActRuleBPM_Low"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensorObs"/>
+        <NamedIndividual IRI="#ObsRuleBPM_Low"/>
+        <NamedIndividual IRI="#SensorObsBPM_Low"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actRule"/>
+        <NamedIndividual IRI="#ObsRuleBloodPr_High"/>
+        <NamedIndividual IRI="#ActRuleBloodPr_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensorObs"/>
+        <NamedIndividual IRI="#ObsRuleBloodPr_High"/>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_actRule"/>
+        <NamedIndividual IRI="#ObsRuleTemp_High"/>
+        <NamedIndividual IRI="#ActRuleTemp_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensorObs"/>
+        <NamedIndividual IRI="#ObsRuleTemp_High"/>
+        <NamedIndividual IRI="#SensorObsTemp_High"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensor"/>
+        <NamedIndividual IRI="#SensorObsBPM_High"/>
+        <NamedIndividual IRI="#ZephyrBpm"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensor"/>
+        <NamedIndividual IRI="#SensorObsBPM_Low"/>
+        <NamedIndividual IRI="#ZephyrBpm"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensor"/>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+        <NamedIndividual IRI="#ZephyrBloodPressure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_sensor"/>
+        <NamedIndividual IRI="#SensorObsTemp_High"/>
+        <NamedIndividual IRI="#ZephyrTemperature"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ActRuleBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ActRuleBPMHigh</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ActRuleBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ActRuleBPMLow</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ActRuleBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ActRuleBloodPr_High</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ActRuleTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ActRuleTemp_High</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">df932351-cc67-4527-9a37-938d560625be</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_name"/>
+        <NamedIndividual IRI="#Dalva"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Dalva</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_mhubIdDestination"/>
+        <NamedIndividual IRI="#NotificationBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">bb103877-8335-444a-be5f-db8d916f6754</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_notificationText"/>
+        <NamedIndividual IRI="#NotificationBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">O paciente monitorado esta com batimento cardiaco alto.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_mhubIdDestination"/>
+        <NamedIndividual IRI="#NotificationBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">bb103877-8335-444a-be5f-db8d916f6754</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_notificationText"/>
+        <NamedIndividual IRI="#NotificationBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">O paciente monitorado esta com batimento cardiaco baixo.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_mhubIdDestination"/>
+        <NamedIndividual IRI="#NotificationBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">bb103877-8335-444a-be5f-db8d916f6754</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_notificationText"/>
+        <NamedIndividual IRI="#NotificationBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">O paciente monitorado esta com pressão alta.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_mhubIdDestination"/>
+        <NamedIndividual IRI="#NotificationTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">bb103877-8335-444a-be5f-db8d916f6754</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_notificationText"/>
+        <NamedIndividual IRI="#NotificationTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">O paciente monitorado esta com febre.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ObsActRuleBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ObsActRuleBPMHigh</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ObsActRuleBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ObsActRuleBPMLow</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ObsActRuleBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ObsActRuleBloodPr_High</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ObsActRuleTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ObsActRuleTemp_High</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ObsRuleBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ObsRuleBPMHigh</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ObsRuleBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ObsRuleBPMLow</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ObsRuleBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ObsRuleBloodPr_High</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_id"/>
+        <NamedIndividual IRI="#ObsRuleTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ObsRuleTemp_High</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_logicalCondition"/>
+        <NamedIndividual IRI="#SensorObsBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">GreaterOrEqualThan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_name"/>
+        <NamedIndividual IRI="#SensorObsBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ZephyrBPMHigh</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_numberOfValues"/>
+        <NamedIndividual IRI="#SensorObsBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_unityOfMeasurement"/>
+        <NamedIndividual IRI="#SensorObsBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">BPM</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_valueOneRestriction"/>
+        <NamedIndividual IRI="#SensorObsBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">100</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isAbout"/>
+        <NamedIndividual IRI="#SensorObsBPM_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Batimento Cardíaco</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_logicalCondition"/>
+        <NamedIndividual IRI="#SensorObsBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">LessOrEqualThan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_name"/>
+        <NamedIndividual IRI="#SensorObsBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ZephyrBPMLow</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_numberOfValues"/>
+        <NamedIndividual IRI="#SensorObsBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_unityOfMeasurement"/>
+        <NamedIndividual IRI="#SensorObsBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">BPM</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_valueOneRestriction"/>
+        <NamedIndividual IRI="#SensorObsBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">30</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isAbout"/>
+        <NamedIndividual IRI="#SensorObsBPM_Low"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Batimento Cardíaco</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_logicalCondition"/>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">GreaterOrEqualThan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_name"/>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ZephyrBloodPressureHigh</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_numberOfValues"/>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_unityOfMeasurement"/>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">mmHg</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_valueOneRestriction"/>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">16</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_valueTwoRestriction"/>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isAbout"/>
+        <NamedIndividual IRI="#SensorObsBloodPr_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Pressão Arterial</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_logicalCondition"/>
+        <NamedIndividual IRI="#SensorObsTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">GreaterOrEqualThan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_name"/>
+        <NamedIndividual IRI="#SensorObsTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ZephyrTemperatureHigh</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_numberOfValues"/>
+        <NamedIndividual IRI="#SensorObsTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_unityOfMeasurement"/>
+        <NamedIndividual IRI="#SensorObsTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Celsius</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_valueOneRestriction"/>
+        <NamedIndividual IRI="#SensorObsTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">38</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isAbout"/>
+        <NamedIndividual IRI="#SensorObsTemp_High"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Temperatura</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_sensorName"/>
+        <NamedIndividual IRI="#ZephyrBloodPressure"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">zephyrbloodpressure</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_sensorName"/>
+        <NamedIndividual IRI="#ZephyrBpm"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">zephyrbpm</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_sensorName"/>
+        <NamedIndividual IRI="#ZephyrTemperature"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">zephyrtemp</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_actRule"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_actRule"/>
+        <Class IRI="#ObsActRule"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_actRule"/>
+        <Class IRI="#ObsRule"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_actuationEffect"/>
+        <Class IRI="#ActRule"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_actuator"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_obsActRule"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <Class IRI="#ObsActRule"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sensor"/>
+        <Class IRI="#Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sensor"/>
+        <Class IRI="#SensorObs"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_sensorObs"/>
+        <Class IRI="#ObsRule"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_actRule"/>
+        <Class IRI="#ActRule"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_actuationEffect"/>
+        <Class IRI="#ActuationEffect"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_actuator"/>
+        <Class IRI="#Actuator"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_obsActRule"/>
+        <Class IRI="#ObsActRule"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_obsRule"/>
+        <Class IRI="#ObsRule"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_sensor"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_sensorObs"/>
+        <Class IRI="#SensorObs"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_actuatorName"/>
+        <Class IRI="#Actuator"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <Class IRI="#ActRule"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <Class IRI="#Entity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <Class IRI="#ObsActRule"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_id"/>
+        <Class IRI="#ObsRule"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_logicalCondition"/>
+        <Class IRI="#SensorObs"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_mhubIdDestination"/>
+        <Class IRI="#Notification"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_notificationText"/>
+        <Class IRI="#Notification"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_numberOfValues"/>
+        <Class IRI="#SensorObs"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_sensorName"/>
+        <Class IRI="#Sensor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_unityOfMeasurement"/>
+        <Class IRI="#SensorObs"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isAbout"/>
+        <Class IRI="#SensorObs"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_actuatorName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_id"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_logicalCondition"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_mhubIdDestination"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_notificationText"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_numberOfValues"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_sensorName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#has_unityOfMeasurement"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isAbout"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_actuatorName</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Usada no sistema para ligar ao nome do atuador.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_numberOfValues</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Quantos valores por vez o sensor vai enviar. Ou quantos valores por vez esta SensorObs vai levar em consideração.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_sensorName</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Usada no sistema para ligar ao sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_unityOfMeasurement</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A unidade de medida dos dados produzidos pelo sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isAbout</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Sobre o que é este sensor, qual tipo de dado ele produz. Ex: Batimento cardíaco.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
